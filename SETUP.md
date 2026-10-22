@@ -12,6 +12,7 @@
    - CRM_PASSCODE   = a short team passcode (recommended, so strangers cannot use your quota)
    - ALLOWED_ORIGIN = https://confluence-snowy-kappa.vercel.app (recommended)
    - GEMINI_MODEL   = optional; defaults to gemini-3.8-flash
+   - DEMO_FALLBACK  = optional; set to off to show Gemini's real error instead of the labelled demo answer
 3. Redeploy so the variables take effect.
 4. Open the site → Sales CRM → 5 · AI lead finder, enter the passcode once, and ask a question.
 
@@ -20,3 +21,4 @@
 - Answers use Google Search grounding and show sources; verify every company before adding it.
 - Grounded search calls may be billed by Google; check your quota in Google AI Studio.
 - The rate limit is 20 questions per 10 minutes per visitor.
+- If Gemini fails (for example, quota reached), the lead finder shows a labelled demo answer with fictional companies. Check Vercel Logs for the real error.
